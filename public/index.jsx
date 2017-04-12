@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx'
+import Container from './components/Container.jsx'
 
 export default class App extends React.Component {
     render() {
+        return(
+        <Container />
+        );
     }
 }
 
