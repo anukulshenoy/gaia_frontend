@@ -1,5 +1,4 @@
 import React from 'react';
-import Test from './test.jsx';
 
 const io = require('socket.io-client');
 const socket = io();
@@ -7,17 +6,25 @@ const socket = io();
 class Container extends React.Component {
     constructor() {
         super();
+        this.state = {
+            videos: []
+        }
     }
 
-    componentDidMount() {
+    componentWillMount() {
+        var context = this;
         socket.emit("getVideoList");
         socket.on("videoTitles", function(data){
-            console.log(data);
+            context.setState({
+                videos: data
+            }, function(){
+                console.log(context.state.videos);
+            })
         })
     }
     render() {
-        return (
-            <Test />
+        return(
+            <div>Hi</div>
         )
     }
 }
