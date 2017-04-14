@@ -12,7 +12,7 @@ class VideoContainer extends React.Component {
         }
     }
     componentWillMount() {
-        var context = this;
+        let context = this;
         socket.emit("getVideoList");
         socket.on("videoTitles", function(data){
             context.setState({
@@ -23,21 +23,16 @@ class VideoContainer extends React.Component {
         })
     }
     render() {
-        var context = this;
+        let context = this;
         return(
         <div className="videoContainer" >
             <div className="row">
-            <VideoTile />
-            <VideoTile />
-            <VideoTile />
-            <VideoTile />
-            <VideoTile />
-            <VideoTile />
-            <VideoTile />
-            <VideoTile />
-            <VideoTile />
-            <VideoTile />
-
+                {context.state.videos.map((video) => {
+                    console.log(video.hero_image.hero_570x300);
+                    return(
+                        <VideoTile imageSource = {video.hero_image.hero_570x300} />
+                    );
+                })}
             </div>
         </div>
         );

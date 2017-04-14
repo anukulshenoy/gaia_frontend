@@ -93,14 +93,27 @@ html {
 #banner--content {
     position:absolute;
     left: 50px;
-    top: 30px;
+    top: 20px;
     color: white;
 }
 #banner--content h1 {
-    font-size: 50px;
+    font-size: 40px;
+}
+#banner--content p {
+    font-size: 25px;
+    padding-right: 80px;
 }
 @media screen and (min-width: 600px) {
     .videoTile {
         flex: 1;
     }
+}
+
+#sort {
+    float: right;
+    margin: 10px;
+}
+
+#select option {
+    width:220px;
 }
