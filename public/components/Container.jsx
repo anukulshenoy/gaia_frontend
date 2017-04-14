@@ -1,30 +1,20 @@
 import React from 'react';
-
-const io = require('socket.io-client');
-const socket = io();
+import Header from './Header.jsx';
+import Nav from './Nav.jsx'
+import VideoContainer from './VideoContainer.jsx';
 
 class Container extends React.Component {
     constructor() {
         super();
-        this.state = {
-            videos: []
-        }
     }
 
-    componentWillMount() {
-        var context = this;
-        socket.emit("getVideoList");
-        socket.on("videoTitles", function(data){
-            context.setState({
-                videos: data
-            }, function(){
-                console.log(context.state.videos);
-            })
-        })
-    }
     render() {
         return(
-            <div>Hi</div>
+            <div className="container">
+                <Header />
+                <Nav />
+                <VideoContainer />
+            </div>
         )
     }
 }
