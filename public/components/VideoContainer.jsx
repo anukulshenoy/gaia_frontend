@@ -30,7 +30,7 @@ class VideoContainer extends React.Component {
                 {context.state.videos.map((video) => {
                     console.log(video.hero_image.hero_570x300);
                     return(
-                        <VideoTile imageSource = {video.hero_image.hero_570x300} />
+                        <VideoTile title={video.title} imageSource = {video.hero_image.hero_570x300} />
                     );
                 })}
             </div>

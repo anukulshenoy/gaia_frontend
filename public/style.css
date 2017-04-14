@@ -61,8 +61,8 @@ html {
 .videoTile {
     display: inline-flex;
     flex-basis: 100%;
-    max-width: 250px;
-    max-height: 125px;
+    max-width: 350px;
+    max-height: 175px;
     margin: 40px;
     border: 2px solid black;
     position: relative;
